@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Feedback | ARTHER Analytics</title>
+    <meta name="description" content="Contact ARTHER Analytics support. Submit feedback and system resonance reports for AI calibration in Abu Dhabi, UAE.">
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7S60KVJZH9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7S60KVJZH9');
+</script>
+   <style>
+        :root { --bg: #0b0f19; --card: #151c2c; --accent: #d4af37; --gold-grad: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); --text: #94a3b8; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
+        nav a { text-decoration: none; color: #1e293b; font-weight: bold; margin-left: 20px; font-size: 13px; text-transform: uppercase; }
+        .card-wrap { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .card { background: var(--card); padding: 40px; border-radius: 24px; width: 100%; max-width: 450px; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+        h2 { color: var(--accent); text-align: center; letter-spacing: 2px; text-transform: uppercase; margin-top: 0; }
+        label { display: block; font-size: 10px; color: var(--accent); font-weight: bold; margin-bottom: 5px; text-transform: uppercase; margin-top: 15px; }
+        input, textarea { width: 100%; padding: 14px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: white; box-sizing: border-box; outline: none; }
+        button { width: 100%; padding: 16px; background: var(--gold-grad); border: none; border-radius: 8px; font-weight: 800; cursor: pointer; color: #0b0f19; text-transform: uppercase; transition: 0.3s; margin-top: 20px; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        #success { display: none; text-align: center; }
+        footer { text-align: center; color: #4b5563; font-size: 11px; padding: 20px; }
+        #hidden_iframe { display: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div style="color:var(--accent); font-weight:900; font-size:1.6rem; letter-spacing: 2px;">ARTHER AI</div>
+    <div><a href="index.html">Dashboard</a><a href="picker.html">Picker</a><a href="about.html">About</a><a href="feedback.html">Support</a></div>
+</nav>
+
+<div class="card-wrap">
+    <div class="card">
+        <div id="formWrap">
+            <h2>System Feedback</h2>
+            <p style="text-align: center; font-size: 12px; color: var(--text); margin-bottom: 20px;">Report patterns to help calibrate the AI engine.</p>
+            
+            <form action="https://script.google.com/macros/s/AKfycbw-WlcR9YYyxn4X0DZAv8USIoIgnMSO4keKVhEDX5EELdYZjH6WEPg54Vg-S_mHPL_C/exec" 
+                  method="POST" 
+                  target="hidden_iframe" 
+                  onsubmit="handleSub()">
+                
+                <label>Identification</label>
+                <input type="text" name="name" id="f_name" placeholder="FULL NAME" required>
+                
+                <label>Contact Email</label>
+                <input type="email" name="email" id="f_email" placeholder="EMAIL" required>
+                
+                <label>Message Transmission</label>
+                <textarea name="message" id="f_msg" rows="5" placeholder="DESCRIBE YOUR RESULTS..." required></textarea>
+                
+                <input type="hidden" name="type" value="Feedback">
+                
+                <button type="submit" id="sBtn">Transmit Feedback</button>
+            </form>
+        </div>
+
+        <div id="success">
+            <p style="color: var(--accent); font-size: 1.2rem; font-weight: bold;">✓ SYNC SUCCESSFUL</p>
+            <p style="color: var(--text); font-size: 14px;">Transmission logged to the ARTHER cloud.</p>
+            <button onclick="window.location.href='index.html'" style="margin-top: 20px;">Return to Hub</button>
+        </div>
+    </div>
+</div>
+
+<footer><p>© 2026 ARTHER Analytics </p></footer>
+
+<iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+
+<script>
+    function handleSub() {
+        const btn = document.getElementById('sBtn');
+        btn.innerText = "SYNCING...";
+        btn.disabled = true;
+
+        // Visual success transition
+        setTimeout(() => {
+            document.getElementById('formWrap').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+        }, 1500);
+    }
+
+    // Auto-fill from Dashboard memory
+    window.onload = () => {
+        const s = JSON.parse(localStorage.getItem('arther_user'));
+        if(s) {
+            document.getElementById('f_name').value = s.name || '';
+            document.getElementById('f_email').value = s.email || '';
+        }
+    };
+</script>
+
+</body>
+</html>

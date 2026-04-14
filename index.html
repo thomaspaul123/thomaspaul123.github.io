@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTHER AI | Neural Number Pattern Generator</title>
+    <meta name="description" content="ARTHER AI uses neural resonance and bio-signatures to generate lucky number patterns. Advanced AI technology based in Abu Dhabi, UAE.">
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7S60KVJZH9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7S60KVJZH9');
+</script>
+    <style>
+        :root { --bg: #0b0f19; --card: #151c2c; --accent: #d4af37; --gold-grad: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); --text: #94a3b8; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #e2e8f0; margin: 0; line-height: 1.6; }
+        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
+        nav a { text-decoration: none; color: #1e293b; font-weight: 700; margin-left: 20px; font-size: 12px; text-transform: uppercase; }
+        .main-container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        @media (max-width: 850px) { .main-container { grid-template-columns: 1fr; } }
+        .generator-card { background: var(--card); padding: 35px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        input, select { width: 100%; padding: 14px; margin: 10px 0; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; box-sizing: border-box; }
+        label { display: block; font-size: 10px; color: var(--accent); font-weight: bold; text-transform: uppercase; margin-top: 10px; }
+        button { width: 100%; padding: 18px; background: var(--gold-grad); border: none; border-radius: 8px; font-weight: 800; cursor: pointer; text-transform: uppercase; color: #0b0f19; margin-top: 20px; transition: 0.3s; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .digit { display: inline-block; width: 50px; height: 50px; line-height: 50px; background: var(--gold-grad); color: #0b0f19; border-radius: 50%; margin: 5px; text-align: center; font-size: 18px; font-weight: 900; }
+        .ai-insight { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-top: 20px; font-style: italic; font-size: 13px; color: #d4af37; border-left: 3px solid #d4af37; }
+        
+        /* Loading Animation Styles */
+        #loader { display: none; text-align: center; margin-top: 20px; }
+        .progress-container { width: 100%; height: 4px; background: #1e293b; border-radius: 2px; overflow: hidden; margin: 15px 0; }
+        .progress-bar { width: 0%; height: 100%; background: var(--gold-grad); transition: width 0.3s; }
+        .loading-text { font-size: 11px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+
+        footer { text-align: center; padding: 40px 20px; font-size: 11px; color: var(--text); }
+        #hidden_iframe { display: none; }
+    </style>
+</head>
+<body>
+<nav>
+    <div style="color:var(--accent); font-weight:900; font-size:1.6rem; letter-spacing: 2px;">ARTHER AI </div>
+    <div><a href="index.html">Dashboard</a><a href="picker.html">Picker</a><a href="about.html">About</a><a href="feedback.html">Support</a></div>
+</nav>
+
+<div class="main-container">
+    <div>
+        <h1 style="color:var(--accent); font-size: 2.5rem;">AI Neural Generator</h1>
+        <p style="color:var(--text)">Personalized number patterns generated through biometric resonance and mood-weighted heuristics. Professional probability analysis.</p>
+        <img src="img.png" alt="ARTHER AI Robot Analytics" style="width: 100%; max-width: 350px; border-radius: 20px; border: 1px solid var(--accent);">
+    </div>
+    <div class="generator-card">
+        <form id="mainForm" action="https://script.google.com/macros/s/AKfycbx4weEmXcoEMeVxYdb0BZE-SueptHLPIuUi2ok-un_x6idY5o1F_cSaYePaVV-IZBkXSQ/exec" method="POST" target="hidden_iframe" onsubmit="return runAI()">
+            <input type="text" name="name" id="name" placeholder="Full Name" required>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <label>Biological Sync (DOB)</label><input type="date" name="dob" id="dob" required>
+            <div style="display:flex; gap:10px;">
+                <div style="flex:1;"><label>Mood</label><select name="mood" id="mood"><option value="Inspired">Inspired</option><option value="Balanced">Balanced</option><option value="Calm">Calm</option><option value="Energetic">Energetic</option></select></div>
+                <div style="flex:1;"><label>Color</label><select name="color" id="color"><option value="Gold">Gold</option><option value="Blue">Blue</option><option value="Emerald">Emerald</option><option value="Ruby">Ruby</option></select></div>
+            </div>
+            <div style="display:flex; gap:10px;">
+                <div style="flex:1;"><label>Range (Max 1M)</label><input type="number" name="range" id="range" value="49" max="1000000" required></div>
+                <div style="flex:1;"><label>Qty (Max 10)</label><input type="number" name="limit" id="limit" value="6" max="10" required></div>
+            </div>
+            <input type="hidden" name="type" value="Dashboard"><input type="hidden" name="output" id="output">
+            <button type="submit">Retrieve My Pattern</button>
+        </form>
+
+        <div id="loader">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="loading-text" id="loadingStatus">Initializing Neural Scan...</p>
+        </div>
+
+        <div id="resultArea" style="display:none; text-align:center;">
+            <div id="numDisplay"></div>
+            <div id="aiInsight" class="ai-insight"></div>
+            <button onclick="location.reload()" style="background:transparent; border:1px solid var(--accent); color:var(--accent); width:auto; padding: 10px 20px; font-size:11px; margin-top:15px;">New Calibration</button>
+        </div>
+    </div>
+</div>
+<footer><p>© 2026 ARTHER Analytics </p><a href="privacy.html" style="color:var(--accent); text-decoration:none;">Privacy Policy</a></footer>
+<iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+
+<script>
+    function runAI() {
+        const n = document.getElementById('name').value, d = document.getElementById('dob').value, r = parseInt(document.getElementById('range').value), l = parseInt(document.getElementById('limit').value);
+        if(l > 10 || r > 1000000 || l > r) { alert("Validation Error: Quantity must be ≤ 10 and Range ≤ 1,000,000."); return false; }
+        
+        localStorage.setItem('arther_user', JSON.stringify({name:n, email:document.getElementById('email').value, dob:d}));
+        let seed = 0; for(let i=0; i<n.length; i++) seed += n.charCodeAt(i);
+        seed += parseInt(d.replace(/-/g, ''));
+        const m = document.getElementById('mood').value;
+        const c = document.getElementById('color').value;
+        const mWeight = {"Inspired":1.7, "Balanced":1.1, "Calm":0.8, "Energetic":2.2}[m];
+        
+        let res = []; let i = 0;
+        while(res.length < l && i < 1000) {
+            i++; let wave = Math.sin(seed + i) * mWeight * 50;
+            let p = Math.floor((Math.abs(Math.cos(wave) * 1000000) % r) + 1);
+            if(!res.includes(p)) res.push(p);
+        }
+        const sorted = res.sort((a,b)=>a-b);
+        document.getElementById('output').value = sorted.join(", ");
+        
+        // UI TRANSITION: Hide form, Show loader
+        document.getElementById('mainForm').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+
+        // Animate the loading bar
+        let width = 0;
+        const bar = document.getElementById('progressBar');
+        const status = document.getElementById('loadingStatus');
+        const stages = ["Extracting Bio-Data...", "Mapping Neural Weights...", "Analyzing Probability...", "Synchronizing Resonance..."];
+        
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                showResults(sorted, m, c);
+            } else {
+                width += 2; // Speed of the loader
+                bar.style.width = width + '%';
+                // Change text based on progress
+                if (width < 30) status.innerText = stages[0];
+                else if (width < 60) status.innerText = stages[1];
+                else if (width < 85) status.innerText = stages[2];
+                else status.innerText = stages[3];
+            }
+        }, 40); // Total duration ~2 seconds
+
+        return true;
+    }
+
+    function showResults(sorted, m, c) {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('numDisplay').innerHTML = sorted.map(v => `<div class="digit">${v}</div>`).join('');
+        document.getElementById('aiInsight').innerText = `Analysis complete. Pattern synchronized with your ${c} resonance and ${m} mood signature.`;
+        document.getElementById('resultArea').style.display = 'block';
+    }
+</script>
+<script type="text/javascript"> //<![CDATA[
+  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]></script>
+<script language="JavaScript" type="text/javascript">
+  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+</script>
+</body>
+</html>
