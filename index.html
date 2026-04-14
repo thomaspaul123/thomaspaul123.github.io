@@ -3,150 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTHER AI | Neural Number Pattern Generator</title>
-    <meta name="description" content="ARTHER AI uses neural resonance and bio-signatures to generate lucky number patterns. Advanced AI technology based in Abu Dhabi, UAE.">
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7S60KVJZH9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7S60KVJZH9');
-</script>
+    <title>Thomas Paul | Arther Analytics Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --bg: #0b0f19; --card: #151c2c; --accent: #d4af37; --gold-grad: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); --text: #94a3b8; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #e2e8f0; margin: 0; line-height: 1.6; }
-        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
-        nav a { text-decoration: none; color: #1e293b; font-weight: 700; margin-left: 20px; font-size: 12px; text-transform: uppercase; }
-        .main-container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        @media (max-width: 850px) { .main-container { grid-template-columns: 1fr; } }
-        .generator-card { background: var(--card); padding: 35px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
-        input, select { width: 100%; padding: 14px; margin: 10px 0; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; box-sizing: border-box; }
-        label { display: block; font-size: 10px; color: var(--accent); font-weight: bold; text-transform: uppercase; margin-top: 10px; }
-        button { width: 100%; padding: 18px; background: var(--gold-grad); border: none; border-radius: 8px; font-weight: 800; cursor: pointer; text-transform: uppercase; color: #0b0f19; margin-top: 20px; transition: 0.3s; }
-        button:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
-        .digit { display: inline-block; width: 50px; height: 50px; line-height: 50px; background: var(--gold-grad); color: #0b0f19; border-radius: 50%; margin: 5px; text-align: center; font-size: 18px; font-weight: 900; }
-        .ai-insight { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-top: 20px; font-style: italic; font-size: 13px; color: #d4af37; border-left: 3px solid #d4af37; }
-        
-        /* Loading Animation Styles */
-        #loader { display: none; text-align: center; margin-top: 20px; }
-        .progress-container { width: 100%; height: 4px; background: #1e293b; border-radius: 2px; overflow: hidden; margin: 15px 0; }
-        .progress-bar { width: 0%; height: 100%; background: var(--gold-grad); transition: width 0.3s; }
-        .loading-text { font-size: 11px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
-
-        footer { text-align: center; padding: 40px 20px; font-size: 11px; color: var(--text); }
-        #hidden_iframe { display: none; }
+        body { background-color: #0a0a0a; color: #e5e5e5; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .oracle-red { color: #f80000; }
+        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .card:hover { border-color: #f80000; transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
 <body>
-<nav>
-    <div style="color:var(--accent); font-weight:900; font-size:1.6rem; letter-spacing: 2px;">ARTHER  </div>
-    <div><a href="index.html">Dashboard</a><a href="picker.html">Picker</a><a href="about.html">About</a><a href="feedback.html">Support</a></div>
-</nav>
 
-<div class="main-container">
-    <div>
-        <h1 style="color:var(--accent); font-size: 2.5rem;">AI Neural Generator</h1>
-        <p style="color:var(--text)">Personalized number patterns generated through biometric resonance and mood-weighted heuristics. Professional probability analysis.</p>
-        <img src="img.png" alt="ARTHER AI Robot Analytics" style="width: 100%; max-width: 350px; border-radius: 20px; border: 1px solid var(--accent);">
-    </div>
-    <div class="generator-card">
-        <form id="mainForm" action="https://script.google.com/macros/s/AKfycbx4weEmXcoEMeVxYdb0BZE-SueptHLPIuUi2ok-un_x6idY5o1F_cSaYePaVV-IZBkXSQ/exec" method="POST" target="hidden_iframe" onsubmit="return runAI()">
-            <input type="text" name="name" id="name" placeholder="Full Name" required>
-            <input type="email" name="email" id="email" placeholder="Email Address" required>
-            <label>Biological Sync (DOB)</label><input type="date" name="dob" id="dob" required>
-            <div style="display:flex; gap:10px;">
-                <div style="flex:1;"><label>Mood</label><select name="mood" id="mood"><option value="Inspired">Inspired</option><option value="Balanced">Balanced</option><option value="Calm">Calm</option><option value="Energetic">Energetic</option></select></div>
-                <div style="flex:1;"><label>Color</label><select name="color" id="color"><option value="Gold">Gold</option><option value="Blue">Blue</option><option value="Emerald">Emerald</option><option value="Ruby">Ruby</option></select></div>
-            </div>
-            <div style="display:flex; gap:10px;">
-                <div style="flex:1;"><label>Range (Max 1M)</label><input type="number" name="range" id="range" value="49" max="1000000" required></div>
-                <div style="flex:1;"><label>Qty (Max 10)</label><input type="number" name="limit" id="limit" value="6" max="10" required></div>
-            </div>
-            <input type="hidden" name="type" value="Dashboard"><input type="hidden" name="output" id="output">
-            <button type="submit">Retrieve My Pattern</button>
-        </form>
-
-        <div id="loader">
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <p class="loading-text" id="loadingStatus">Initializing Neural Scan...</p>
+    <nav class="fixed w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+        <h1 class="text-xl font-black tracking-tighter uppercase">ARTHER <span class="oracle-red">ANALYTICS</span></h1>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#skills" class="hover:text-white transition">Capabilities</a>
+            <a href="#certifications" class="hover:text-white transition">Certifications</a>
+            <a href="#content" class="hover:text-white transition">Collaboration</a>
         </div>
+        <a href="mailto:thomaspaul123@gmail.com" class="text-xs font-bold oracle-red border border-red-900 px-4 py-2 rounded hover:bg-red-900 hover:text-white transition">CONTACT</a>
+    </nav>
 
-        <div id="resultArea" style="display:none; text-align:center;">
-            <div id="numDisplay"></div>
-            <div id="aiInsight" class="ai-insight"></div>
-            <button onclick="location.reload()" style="background:transparent; border:1px solid var(--accent); color:var(--accent); width:auto; padding: 10px 20px; font-size:11px; margin-top:15px;">New Calibration</button>
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6">
+        <div class="mb-4 text-xs font-bold text-red-500 uppercase tracking-[0.3em]">Freelance Oracle Professional</div>
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">Thomas Paul</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+            16 years of expertise in enterprise application governance. 
+            A specialized <span class="text-white">60% Technical / 40% Functional</span> profile focused on Oracle Fusion ERP.
+        </p>
+        <div class="mt-10 flex gap-8 text-3xl">
+            <a href="https://www.linkedin.com/in/thomas-paul-04243135/" target="_blank" class="hover:text-white transition text-gray-500"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@OraFarming" target="_blank" class="hover:text-red-600 transition text-gray-500"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:thomaspaul123@gmail.com" class="hover:text-white transition text-gray-500"><i class="fas fa-envelope"></i></a>
         </div>
-    </div>
-</div>
-<footer><p>© 2026 ARTHER Analytics </p><a href="privacy.html" style="color:var(--accent); text-decoration:none;">Privacy Policy</a></footer>
-<iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+    </section>
 
-<script>
-    function runAI() {
-        const n = document.getElementById('name').value, d = document.getElementById('dob').value, r = parseInt(document.getElementById('range').value), l = parseInt(document.getElementById('limit').value);
-        if(l > 10 || r > 1000000 || l > r) { alert("Validation Error: Quantity must be ≤ 10 and Range ≤ 1,000,000."); return false; }
-        
-        localStorage.setItem('arther_user', JSON.stringify({name:n, email:document.getElementById('email').value, dob:d}));
-        let seed = 0; for(let i=0; i<n.length; i++) seed += n.charCodeAt(i);
-        seed += parseInt(d.replace(/-/g, ''));
-        const m = document.getElementById('mood').value;
-        const c = document.getElementById('color').value;
-        const mWeight = {"Inspired":1.7, "Balanced":1.1, "Calm":0.8, "Energetic":2.2}[m];
-        
-        let res = []; let i = 0;
-        while(res.length < l && i < 1000) {
-            i++; let wave = Math.sin(seed + i) * mWeight * 50;
-            let p = Math.floor((Math.abs(Math.cos(wave) * 1000000) % r) + 1);
-            if(!res.includes(p)) res.push(p);
-        }
-        const sorted = res.sort((a,b)=>a-b);
-        document.getElementById('output').value = sorted.join(", ");
-        
-        // UI TRANSITION: Hide form, Show loader
-        document.getElementById('mainForm').style.display = 'none';
-        document.getElementById('loader').style.display = 'block';
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto border-t border-gray-900">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <h3 class="text-2xl font-bold uppercase tracking-tighter oracle-red">About Me</h3>
+            </div>
+            <div class="md:col-span-2 text-gray-400 leading-relaxed space-y-4">
+                <p>Based in Abu Dhabi, I am an Oracle Certified Professional with a deep history in managing complex ecosystems. I specialize in bridging the gap between business requirements and technical execution for Finance, SCM, and HCM modules.</p>
+                <p>My focus is on platform hygiene, managing quarterly update cycles, and ensuring audit-ready data integrity during large-scale migrations.</p>
+            </div>
+        </div>
+    </section>
 
-        // Animate the loading bar
-        let width = 0;
-        const bar = document.getElementById('progressBar');
-        const status = document.getElementById('loadingStatus');
-        const stages = ["Extracting Bio-Data...", "Mapping Neural Weights...", "Analyzing Probability...", "Synchronizing Resonance..."];
-        
-        const interval = setInterval(() => {
-            if (width >= 100) {
-                clearInterval(interval);
-                showResults(sorted, m, c);
-            } else {
-                width += 2; // Speed of the loader
-                bar.style.width = width + '%';
-                // Change text based on progress
-                if (width < 30) status.innerText = stages[0];
-                else if (width < 60) status.innerText = stages[1];
-                else if (width < 85) status.innerText = stages[2];
-                else status.innerText = stages[3];
-            }
-        }, 40); // Total duration ~2 seconds
+    <section id="skills" class="py-24 px-6 bg-[#080808]">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-center text-sm font-bold text-gray-500 uppercase tracking-widest mb-16">Core Capabilities</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-xl glass">
+                    <i class="fas fa-chart-pie oracle-red text-2xl mb-4"></i>
+                    <h4 class="font-bold mb-2 text-white">Reporting & Analytics</h4>
+                    <p class="text-sm text-gray-500">Advanced BIP & OTBI development and Oracle Analytics Cloud (OAC) modeling for enterprise compliance.</p>
+                </div>
+                <div class="card p-8 rounded-xl glass">
+                    <i class="fas fa-network-wired oracle-red text-2xl mb-4"></i>
+                    <h4 class="font-bold mb-2 text-white">PaaS & Integrations</h4>
+                    <p class="text-sm text-gray-500">Oracle Integration Cloud (OIC) orchestration and REST/SOAP API management across hybrid environments.</p>
+                </div>
+                <div class="card p-8 rounded-xl glass">
+                    <i class="fas fa-clipboard-list oracle-red text-2xl mb-4"></i>
+                    <h4 class="font-bold mb-2 text-white">Process Mapping</h4>
+                    <p class="text-sm text-gray-500">Business process auditing, functional configuration, and requirement gathering for Fusion ERP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        return true;
-    }
+    <section id="certifications" class="py-24 px-6 max-w-5xl mx-auto text-center">
+        <h3 class="text-2xl font-bold uppercase tracking-tighter mb-12">Oracle Certified Professional</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="p-4 border border-gray-900 rounded bg-[#0f0f0f]">
+                <div class="text-[10px] text-red-500 font-bold mb-1">ORACLE 2025</div>
+                <div class="text-xs font-bold uppercase">OIC Professional</div>
+            </div>
+            <div class="p-4 border border-gray-900 rounded bg-[#0f0f0f]">
+                <div class="text-[10px] text-red-500 font-bold mb-1">ORACLE 2025</div>
+                <div class="text-xs font-bold uppercase">OAC Professional</div>
+            </div>
+            <div class="p-4 border border-gray-900 rounded bg-[#0f0f0f]">
+                <div class="text-[10px] text-red-500 font-bold mb-1">ORACLE 2026</div>
+                <div class="text-xs font-bold uppercase">AI Agent Studio</div>
+            </div>
+            <div class="p-4 border border-gray-900 rounded bg-[#0f0f0f]">
+                <div class="text-[10px] text-red-500 font-bold mb-1">ITIL v3</div>
+                <div class="text-xs font-bold uppercase">Service Mgmt</div>
+            </div>
+        </div>
+    </section>
 
-    function showResults(sorted, m, c) {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('numDisplay').innerHTML = sorted.map(v => `<div class="digit">${v}</div>`).join('');
-        document.getElementById('aiInsight').innerText = `Analysis complete. Pattern synchronized with your ${c} resonance and ${m} mood signature.`;
-        document.getElementById('resultArea').style.display = 'block';
-    }
-</script>
-<script type="text/javascript"> //<![CDATA[
-  var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
-  document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-//]]></script>
-<script language="JavaScript" type="text/javascript">
-  TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
-</script>
+    <section id="content" class="py-24 px-6 bg-red-950/10 border-y border-red-900/20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6 italic text-white">Collaborate on Content</h3>
+            <p class="text-gray-400 mb-10 leading-relaxed text-lg">
+                I am open to discussing business scenarios for <strong>podcasts</strong>, <strong>video content</strong>, and <strong>technical case studies</strong>. Let’s share knowledge with the Oracle community.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="https://www.youtube.com/@OraFarming" target="_blank" class="bg-red-600 text-white font-bold px-8 py-3 rounded hover:bg-red-700 transition uppercase text-xs tracking-widest"><i class="fab fa-youtube mr-2"></i> Visit YouTube</a>
+                <a href="mailto:thomaspaul123@gmail.com" class="bg-white text-black font-bold px-8 py-3 rounded hover:bg-gray-200 transition uppercase text-xs tracking-widest">Email for Podcast</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 text-center border-t border-gray-900">
+        <div class="mb-8 space-y-4">
+            <p class="text-white font-bold text-xl"><i class="fas fa-envelope oracle-red mr-2"></i> thomaspaul123@gmail.com</p>
+            <p class="text-white font-bold text-xl"><i class="fas fa-phone oracle-red mr-2"></i> +971 56 325 8684</p>
+        </div>
+        <div class="max-w-2xl mx-auto text-[10px] text-gray-600 leading-relaxed uppercase tracking-wider">
+            <p>Arther Analytics is a professional brand for the freelance consultancy of Thomas Paul. 
+               All project scopes and collaborations are finalized after mutual introductory discussion. 
+               This site serves as a professional portfolio.</p>
+        </div>
+        <p class="mt-12 text-[10px] text-gray-700">© 2026 Arther Analytics. Abu Dhabi, UAE.</p>
+    </footer>
+
 </body>
 </html>
